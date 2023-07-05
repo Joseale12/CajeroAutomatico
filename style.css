@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-image: linear-gradient(120deg,#131313,#111);
+}
+.text-center{
+    color: #fff;
+}
+.credit-card-wrapper {
+    position: relative;
+}
+.credit-card {
+    width: 500px;
+    height: 300px;
+    color: #fff;
+    background: rgba(27, 2, 136, 0.329);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px 25px;
+    position: relative;
+    font-family:'poppins', sans-serif;
+    box-shadow: 0 10px 30px rgba(20, 20, 20, 0.6)
+}
+.credit-card-wrapper::before,
+.credit-card-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-image: linear-gradient(57deg,#ff7a00,#ff7aff);
+    z-index: -1;
+}
+.credit-card-wrapper::before {
+    top: 0;
+    right: 0;
+    transform: translate(25%, -40%);
+}
+.credit-card-wrapper::after {
+    border-radius: 50%;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%,50%);
+}
+.credit-card .title {
+    text-transform: capitalize;
+}
+.credit-card .chip {
+    max-width: 70px;
+    margin: 10px 0;
+}
+.credit-card .bank-name {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    text-transform: capitalize;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 600;
+}
+.credit-card .card-number {
+    font-family: sans-serif;
+}
+.credit-card .validity {
+    text-transform: capitalize;
+    margin: 20px 0 25px;
+    display: flex;
+    align-items: center;
+}
+.validity span:first-child {
+    margin-right: 20px;
+    line-height: 1.2;
+    text-align: right;
+}
+.validity span:nth-child(2) {
+    font-weight: 600;
+}
+.credit-card .holder-name {
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+.credit-card .circle {
+    position: absolute;
+    width: 60px;
+    height:60px;
+    right: 50px;
+    bottom: 25px;
+}
+.credit-card .circle::before,
+.credit-card .circle::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+}
+.credit-card .circle::before {
+    background-color: rgba(255,255,255,0.5);
+    left: 30%;
+}
+.credit-card .circle::after {
+    background-color: rgba(255,255,255,0.7);
+}
+
+/* se trabaja el modal */
+.login-password,
+.amount {
+    border: transparent;
+}
+#bottom-accept {
+    background-color:rgba(255, 255, 255, 0.863);
+    padding: 1vh;
+    border-radius: 1vh;
+}
+
+.buttons {
+    font-size: 5vh;
+    padding: 1vh;
+    display: inline;
+    margin-right: 1.5vh;
+    border-radius: 1vh;
+    background-color: #fff;
+    color: #111;
+    border: #ff7a00 1px solid;
+}
+.buttons:hover {
+    transform: scale(1.2);
+    background-image: linear-gradient(57deg,#ff7a00,#ff7aff);
+    font-style: italic;
+}
+
+section {
+    height: 30vh;
+    width: 100vh;
+}
+
+.balance-client {
+    display: flex;
+    place-items: center;
+    height: 30vh;
+    width: 55vh;
+    background: rgba(27, 2, 136, 0.329);
+    border-radius: 1vh;
+    color: #fff;
+    box-shadow: 60px -16px #ff7a00;
+    font-style: italic;
+}
+
+h2 {
+    margin-left: 2vh;
+}

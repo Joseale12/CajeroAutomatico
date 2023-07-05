@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero Automatico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="text-center">Cajero Automatico</h1>
+  <div class="credit-card-wrapper" id="credit-card-wrapper">
+    <div class="credit-card">
+      <h3 class="title">credit card</h3>
+      <span class="bank-name">national bank</span>
+      <img class="chip" src="./Imagenes/card.png" alt="">
+      <label for="numberInput"></label>
+      <input type="number" id="numberInput" class="card-number" placeholder="Digite numero de tarjeta">
+      <button type="button" id="bottom-accept" class="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        onclick="getNumber()">Aceptar</button>
+      <div class="validity">
+        <span>valid <br>tru</span>
+        <span>11/28</span>
+      </div>
+      <h3 class="holder-name">XXX XXX</h3>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese contraseña</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="password" id="login-password" class="login-password" placeholder="Ingrese contraseña">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="getPassword()">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="balance-client d-none" id="balance-client">
+    <h2 id="your-balance"></h2>
+  </div>
+
+  <!-- Modal para depositar -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Depositar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="number" id="amount" class="amount" placeholder="Ingrese el monto">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="deposit()">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para retirar-->
+  <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Retirar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="number" id="amount-withdraw" class="amount" placeholder="Ingrese el monto">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="withdraw()">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="section-buttom" class="d-none">
+    <button type="button" class="btn btn-primary buttons" id="insert-cash" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">
+      Depositar
+    </button>
+    <button type="button" class="btn btn-primary buttons" id="withdraw-cash" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop1">
+      Retirar
+    </button>
+    <button id="logout" class="btn btn-primary buttons">Salir</button>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
